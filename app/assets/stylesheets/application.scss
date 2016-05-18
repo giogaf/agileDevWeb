@@ -13,3 +13,15 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+@media (max-width: 480px) {
+
+  }
+@media (min-width: 980px) {
+    #lista_serie_descripcion{
+    margin-top: 67px;
+    }
+  }  
+
+
+
