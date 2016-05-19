@@ -8,3 +8,8 @@ two:
   descripcion: MyText
   precio: 9.99
   imagen: MyString 
+modernfamily:
+  titulo: Modern Family
+  descripcion: la serie trata sobre ...
+  precio: 2999
+  imagen: mf.jpg 
