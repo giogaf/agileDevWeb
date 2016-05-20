@@ -13,3 +13,8 @@ modernfamily:
   descripcion: la serie trata sobre ...
   precio: 2999
   imagen: mf.jpg 
+unaserie:
+  titulo: titulo serie
+  descripcion: la serie trata sobre ...
+  precio: 1999
+  imagen: umf.jpg  

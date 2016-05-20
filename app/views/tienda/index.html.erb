@@ -1,0 +1,18 @@
+
+<h1>Listado Series</h1>
+
+<% @shows.each do |show| %>
+    <div class="col-xm-6 col-md-3">
+          <h3><%= show.titulo %></h3>
+      <div class="thumbnail">
+        <%= image_tag(show.imagen) %>
+      </div>
+         <div class="caption">
+            <p><%= truncate(show.descripcion,length:120) %></p>
+            <p class='precio'><strong>COP $<%= show.precio %></strong></p>
+            <p><%= link_to 'comprar',tienda_path,class:'btn btn-primary' %></p>
+        </div>
+    </div>         
+<% end %>
+
+
