@@ -6,4 +6,6 @@ class Show < ActiveRecord::Base
         with: /\.(gif|jpg|png)\z/,
         message: 'formatos admitidos gif,jpg,png'
     }
+
+
 end
