@@ -6,6 +6,19 @@ class Show < ActiveRecord::Base
         with: /\.(gif|jpg|png)\z/,
         message: 'formatos admitidos gif,jpg,png'
     }
-
+    
+    has_many :items
+    before_destroy :verificar_referencia_en_item
+    
+    private
+    
+    def verificar_referencia_en_item
+        if items.empty?
+            return true
+        else
+            errors.add(:base,"Serie presente en compras")
+            return false
+        end
+    end
 
 end

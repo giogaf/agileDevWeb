@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+<h2>Detalles Compra</h2>
+<ul>
+    <% @compra.items.each do |item| %>
+        <li><%= item.show.titulo%> -<%=item.compra.id%></li>
+    <% end %>
+</ul>
+

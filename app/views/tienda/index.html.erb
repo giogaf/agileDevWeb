@@ -10,7 +10,8 @@
          <div class="caption">
             <p><%= truncate(show.descripcion,length:120) %></p>
             <p class='precio'><strong>COP $<%= show.precio %></strong></p>
-            <p><%= link_to 'comprar',tienda_path,class:'btn btn-primary' %></p>
+            
+           <%= button_to 'Comprar', items_path(show_id:show),class:'btn btn-primary' %>            
         </div>
     </div>         
 <% end %>
