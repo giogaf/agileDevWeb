@@ -54,7 +54,9 @@ class ComprasController < ApplicationController
   # DELETE /compras/1
   # DELETE /compras/1.json
   def destroy
+    @compra = compra_actual
     @compra.destroy
+    session[:compra_id] = nil    
     respond_to do |format|
       format.html { redirect_to compras_url, notice: 'Compra was successfully destroyed.' }
       format.json { head :no_content }
@@ -65,7 +67,11 @@ class ComprasController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_compra
       @compra = Compra.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+      logger.error "*************** parametro #{params[:id]} para Compra, no existe"
+      redirect_to tienda_path,notice: "Compra # #{params[:id]} no válida"
     end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def compra_params

@@ -26,7 +26,8 @@ class ItemsController < ApplicationController
   def create
     @compra = compra_actual
     serie = Show.find(params[:show_id])
-    @item = @compra.items.build(show: serie)
+    @item = @compra.agregar_serie(serie.id)
+   # @item = @compra.items.build(show: serie)
    # @item = Item.new(item_params)
 
     respond_to do |format|
