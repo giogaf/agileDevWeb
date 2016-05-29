@@ -1,0 +1,10 @@
+<% if item == @item_actual%>
+<tr id='item_actual'> 
+<%else%>
+<tr> 
+<%end%> 
+    <th><%= @num+=1 %></th> 
+    <td><%= item.show.titulo%></td> 
+    <td><%= item.cantidad %></td> 
+    <td><%= item.subtotal %></td>
+</tr>

@@ -15,5 +15,12 @@
         </div>
     </div>         
 <% end %>
+<div id="compra"
+  <%if @compra.items.empty?%>
+  style="display:none"
+  <%end %>
+  >
+<%= render @compra %>
+</div>
 
 

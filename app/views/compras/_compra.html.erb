@@ -1,0 +1,23 @@
+  <table class="table table-striped"> 
+        <thead> 
+          <tr><th>N°</th>
+              <th>Item</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+          </tr>
+        </thead> 
+        <tbody> 
+        <% @num = 0 %>
+        <%= render @compra.items,{locals: @num}%>   
+
+            <tr> 
+            <th></th> 
+            <td></td> 
+            <td>TOTAL</td> 
+            <th><%= @compra.total %></th>
+        </tr> 
+            </tbody>
+    </table>
+    button_to "Vaciar Compra",compra_path(@compra), method: :delete, confirm: "Vaciar Carro. Confirmar",class:"btn btn-primary",remote: true %>
+<%= link_to "Regresar",tienda_path,class:"btn btn-primary" %>
+    
