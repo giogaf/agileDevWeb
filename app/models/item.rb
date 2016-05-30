@@ -1,4 +1,5 @@
 class Item < ActiveRecord::Base
+    belongs_to :pedido
     belongs_to :show
     belongs_to :compra
     

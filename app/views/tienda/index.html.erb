@@ -11,9 +11,15 @@
             <p><%= truncate(show.descripcion,length:120) %></p>
             <p class='precio'><strong>COP $<%= show.precio %></strong></p>
             
-           <%= button_to 'Comprar', items_path(show_id:show),class:'btn btn-primary' %>            
+           <%= button_to 'Comprar', items_path(show_id:show),class:'btn btn-primary', remote: true %>            
         </div>
     </div>         
 <% end %>
 
-
+<div id="compra"
+  <!--<%if @compra.items.empty?%>-->
+  <!--style="display:none"-->
+  <!--<%end %>-->
+  >
+<%= render @compra %>
+</div>

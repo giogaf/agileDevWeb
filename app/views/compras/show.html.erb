@@ -1,34 +1,6 @@
+<% if notice%>
 <p id="notice"><%= notice %></p>
+<% end %>
 <h2>Detalles Compra</h2>
-
-    <table class="table table-striped"> 
-        <thead> 
-          <tr><th>N°</th>
-              <th>Item</th>
-              <th>Cantidad</th>
-              <th>Subtotal</th>
-          </tr>
-        </thead> 
-        <tbody> 
-        <% num=0%>
-    <% @compra.items.each do |item| %>
-        <tr> 
-            <th><%= num+=1 %></th> 
-            <td><%= item.show.titulo%></td> 
-            <td><%= item.cantidad %></td> 
-            <td><%= item.subtotal %></td>
-        </tr>    
-    <% end %>
-            <tr> 
-            <th></th> 
-            <td></td> 
-            <td>TOTAL</td> 
-            <th><%= @compra.total %></th>
-        </tr> 
-        </tbody>
-    </table>
-
-<%= button_to "Vaciar Compra",compra_path(@compra), method: :delete, confirm: "Vaciar Carro. Confirmar",class:"btn btn-primary" %>
-<%= link_to "Regresar",tienda_path,class:"btn btn-primary" %>
-
+<%= render @compra%>
 
