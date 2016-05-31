@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to tienda_path(@compra), notice: 'Item agregado a la Compra' }
+        format.html { redirect_to compra_path(@compra), notice: 'Item agregado a la Compra' }
         format.js   {@item_actual = @item}
         format.json { render :show, status: :created, location: @item }
       else

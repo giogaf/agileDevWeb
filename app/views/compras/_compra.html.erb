@@ -1,4 +1,4 @@
-  <%unless @compra.items.empty?%>
+<%unless @compra.items.empty?%>
 
   <table class="table table-striped"> 
         <thead> 
@@ -20,7 +20,9 @@
         </tr> 
             </tbody>
     </table>
-<%= button_to "Hacer Pedido",new_pedido_path, method: :get ,class:"btn btn-primary" %>     
-<%= button_to "Vaciar Compra",compra_path(@compra), method: :delete, confirm: "Vaciar Carro. Confirmar",class:"btn btn-primary", remote:true %>
-<%= link_to "Regresar",tienda_path,class:"btn btn-primary" %>
+  
+  <%= button_to "Hacer Pedido",new_pedido_path, method: :get ,class:"btn btn-primary" %>     
+  <%= button_to "Vaciar Compra",compra_path(@compra), method: :delete, confirm: "Vaciar Carro. Confirmar",class:"btn btn-primary", remote:true %>
+  <%= link_to "Regresar",tienda_path,class:"btn btn-primary" %>
 <%end %>
+
