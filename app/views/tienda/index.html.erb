@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
 <h1>Listado Series</h1>
 
+<div class="digg_pagination">
+    <%= will_paginate @shows %>
+  </div>
+
+
+
 <% @shows.each do |show| %>
     <div class="col-xm-6 col-md-3">
           <h3><%= show.titulo %></h3>
