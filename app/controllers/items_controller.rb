@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-
+  skip_before_filter :autorizacion, only:[:create]
   # GET /items
   # GET /items.json
   def index

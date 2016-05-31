@@ -1,6 +1,6 @@
 class ComprasController < ApplicationController
   before_action :set_compra, only: [:show, :edit, :update, :destroy]
-
+  skip_before_filter :autorizacion, only: [:crear,:update,:destroy]
   # GET /compras
   # GET /compras.json
   def index

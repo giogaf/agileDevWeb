@@ -23,16 +23,22 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="#">Series<span class="sr-only">(current)</span></a></li>
+        <li class="active"><%= link_to 'Series',tienda_path %><span class="sr-only">(current)</span></a></li>
         <li><a href="#">Menú</a></li>
+        <% if session[:usuario_id] %>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administración <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Opción 1</a></li>
-            <li><a href="#">Opción 2</a></li>
-            <li><a href="#">Opción 3</a></li>
+            
+            <li><%= link_to 'Pedidos', pedidos_path %></li>
+            <li><%= link_to 'Usuarios Admin', usuarios_path%></li>
+            <li><%= link_to 'Nuevo Admin',new_usuario_path %></li>
+            <li><%= link_to 'Log Out', logout_path, method: :delete%></li>
           </ul>
         </li>
+        <%else%>
+        <li><%= link_to 'Log In', login_path%></li>
+        <% end%>        
       </ul>
 
     </div><!-- /.navbar-collapse -->
